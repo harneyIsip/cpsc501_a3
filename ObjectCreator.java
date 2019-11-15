@@ -19,20 +19,40 @@ public class ObjectCreator {
 		String input = scan.nextLine();
 
 		if (input.equals("1")){
-			object = simplePrimitive();
+			object = createSimplePrimitive();
 		}
 		else if (input.equals("2")){
-			object = referenceObject();
+			object = createReferenceObject();
 		}
 		else if (input.equals("3")){
-			object = arrayPrimitives();
+			object = createArrayPrimitives();
 		}
 		else if (input.equals("4")){
-			object = arrayObject();
+			object = createArrayObject();
 		}
 		else if(input.equals("5")){
-			object = objectCollection();
+			object = createObjectCollection();
 		}
+		return object;
+	}
+
+	public Object1 createSimplePrimitive(){
+
+	}
+
+	public Object2 createReferenceObject(){
+
+	}
+
+	public Object3 createArrayPrimitives(){
+
+	}
+
+	public Object4 createArrayObject(){
+
+	}
+
+	public Object5 createObjectCollection(){
 
 	}
 }
