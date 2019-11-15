@@ -25,7 +25,7 @@ public class ObjectCreator {
 			object = createReferenceObject();
 		}
 		else if (input.equals("3")){
-			//object = createArrayPrimitives();
+			object = createArrayPrimitives();
 		}
 		else if (input.equals("4")){
 			//object = createArrayObject();
@@ -59,18 +59,27 @@ public class ObjectCreator {
 	public Object2 createReferenceObject(){
 		System.out.println("Reference objects");
 		Object1 objectRef = createSimplePrimitive();
-
 		Object2 reference = new Object2(objectRef);
 		return reference;
 	}
 
 	/*
 	 * Object that contains an array or primitives
-
+	 */
 	public Object3 createArrayPrimitives(){
-
+		System.out.println("Array of primitives");
+		System.out.println("Enter length of array");
+		int length = scan.nextInt();
+		int[] array = new int[length];
+		//fill out the array then return the object with the array
+		for (int i = 0; i < length; i++){
+			System.out.println("Enter integer values");
+			array[i] = scan.nextInt();
+		}
+		Object3 arrayPrim = new Object3(array);
+		return arrayPrim;
 	}
-	*/
+
 
 	/*
 	 * Object that contains an array of object references
