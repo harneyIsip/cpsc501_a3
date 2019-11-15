@@ -1,7 +1,8 @@
-import java.util.*;
+import java.util.Scanner;
+import java.lang.*;
 
 public class ObjectCreator {
-
+	Scanner scan = new Scanner(System.in);
 	//constructor
 	public ObjectCreator(){
 
@@ -9,7 +10,6 @@ public class ObjectCreator {
 
 	public Object create(){
 		Object object = null;
-		Scanner scan = new Scanner(System.in);
 		System.out.println("1) Simple object with only primitives for instance variables");
 		System.out.print("2) Object that contains references to other objects");
 		System.out.print("3) Object that contains an array or primitives");
@@ -25,13 +25,13 @@ public class ObjectCreator {
 			object = createReferenceObject();
 		}
 		else if (input.equals("3")){
-			object = createArrayPrimitives();
+			//object = createArrayPrimitives();
 		}
 		else if (input.equals("4")){
-			object = createArrayObject();
+			//object = createArrayObject();
 		}
 		else if(input.equals("5")){
-			object = createObjectCollection();
+			//object = createObjectCollection();
 		}
 		else{
 			System.out.println("Only select from 1-5");
@@ -39,43 +39,52 @@ public class ObjectCreator {
 		return object;
 	}
 	/*
-	* Simple object with only primitives for instance variables
+	 * Simple object with only primitives for instance variables
 	 */
 	public Object1 createSimplePrimitive(){
 		int prim1,prim2;
+		System.out.println("2 simple primitives");
 		System.out.println("Enter an integer: ");
 		prim1 = scan.nextInt();
 		System.out.println("Enter another integer");
 		prim2 = scan.nextInt();
 
-		return new Object1(prim1,prim2);
+		Object1 prim = new Object1(prim1,prim2);
+		return prim;
 	}
 
 	/*
 	 * Object that contains references to other objects
 	 */
 	public Object2 createReferenceObject(){
+		System.out.println("Reference objects");
+		Object1 objectRef = createSimplePrimitive();
 
+		Object2 reference = new Object2(objectRef);
+		return reference;
 	}
 
 	/*
 	 * Object that contains an array or primitives
-	 */
+
 	public Object3 createArrayPrimitives(){
 
 	}
+	*/
 
 	/*
 	 * Object that contains an array of object references
-	 */
+
 	public Object4 createArrayObject(){
 
 	}
+	*/
 
 	/*
 	 * Object that uses an instance of Java's collection classes
-	 */
+
 	public Object5 createObjectCollection(){
 
 	}
+	*/
 }
