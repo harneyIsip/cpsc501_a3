@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 import java.lang.*;
 
 public class ObjectCreator {
@@ -28,10 +28,10 @@ public class ObjectCreator {
 			object = createArrayPrimitives();
 		}
 		else if (input.equals("4")){
-			//object = createArrayObject();
+			object = createArrayObject();
 		}
 		else if(input.equals("5")){
-			//object = createObjectCollection();
+			object = createObjectCollection();
 		}
 		else{
 			System.out.println("Only select from 1-5");
@@ -100,9 +100,25 @@ public class ObjectCreator {
 
 	/*
 	 * Object that uses an instance of Java's collection classes
-
+	 */
 	public Object5 createObjectCollection(){
-
+		boolean want = true;
+		ArrayList<Object1> collection = new ArrayList<Object1>();
+		while (want){
+			System.out.println("press 'y' to add to collection and 'n' to exit");
+			String input = scan.nextLine();
+			if(input.equals("y")){
+				Object1 prim = createSimplePrimitive();
+				collection.add(prim);
+			}
+			else if (input.equals("n")){
+				want = false;
+			}
+			else{
+				System.out.println("Only enter 'y' or 'n' ");
+			}
+		}
+		Object5 collectionObject = new Object5(collection);
+		return collectionObject;
 	}
-	*/
 }
