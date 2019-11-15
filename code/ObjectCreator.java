@@ -83,11 +83,20 @@ public class ObjectCreator {
 
 	/*
 	 * Object that contains an array of object references
-
+	 */
 	public Object4 createArrayObject(){
-
+		System.out.println("Array of object references");
+		System.out.println("Enter length of array");
+		int length = scan.nextInt();
+		Object1[] arrObj = new Object1[length];
+		for (int i=0; i<length;i++){
+			Object1 object = createSimplePrimitive();
+			arrObj[i] = object;
+		}
+		Object4 arrayRef = new Object4(arrObj);
+		return arrayRef;
 	}
-	*/
+
 
 	/*
 	 * Object that uses an instance of Java's collection classes
